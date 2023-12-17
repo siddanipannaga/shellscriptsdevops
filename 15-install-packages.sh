@@ -26,10 +26,10 @@ fi
 
 for package in $0
 do
-   yum list installed $package
+   yum list installed $package &>> LOGFILE
    if [  $? -ne 0]
    then
-   yum install $package -y
+   yum install $package -y &>> LOGFILE
    VALIDATE $? "Installation of package"
    else
       echo -e "$package is already installed....$Y skipping $N"
