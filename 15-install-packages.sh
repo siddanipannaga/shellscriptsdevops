@@ -28,7 +28,7 @@ fi
 for package in $0
 do
    yum list installed $package &>> LOGFILE
-   if [$? -ne 0]
+   if [ $? -ne 0 ]
    then
       yum install $package -y &>> LOGFILE
       VALIDATE $? "Installation of package"
