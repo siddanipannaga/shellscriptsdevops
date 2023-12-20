@@ -10,15 +10,15 @@ VALIDATE(){
 
 if [ $1 -ne 0 ]
 then
-   echo "ERROR: $2 is failed"
+   echo  -e "ERROR: $2 is $R failed $N"
    exit 1 # 
 else
-   echo "$2 is sucess"
+   echo "$2 is $G sucess $N"
 fi
 }
 if [ $ID -ne 0 ]
 then
-   echo "ERROR: Please run this script with root user"
+   echo -e "$R ERROR: Please run this script with root user $N  "
    exit 1 # 
 else
    echo "You are a root user"
