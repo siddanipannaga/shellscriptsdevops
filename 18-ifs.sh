@@ -9,7 +9,7 @@ if [ ! -f $file ] #! denotes opposite not exist ! -d indicated the diractory not
 then    
     echo -e " $R source directory: $file does not exit : $N "
 fi
-while IFS= read -r username passwd user_id group_id user_fullname home_dir shell_path
+while IFS=":' read -r username passwd user_id group_id user_fullname home_dir shell_path
 do 
     echo "user name: $username"
     echo "user id: $user_id"
