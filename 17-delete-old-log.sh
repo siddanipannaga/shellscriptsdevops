@@ -8,11 +8,11 @@ N="\e[0m"
 
 if [ ! -d $SOURCE_DIR ] #! denotes opposite not exist ! -d indicated the diractory not exist. 
 then    
-    echo -e " $R source directory: SOURCE_DIR does not exit : $N "
+    echo -e " $R source directory: $SOURCE_DIR does not exit : $N "
 fi
-FILES TO DELETE= $(find . -type f -mtime +14 -name "*.log")
+FILES TO DELETE= $(find $SOURCE_DIR -type f -mtime +14 -name "*.log")
 
 while IFS = read -r line
 do 
     echo " Deleting the file :$line "
-done <<< $FILE TO DELETE
+done <<< $FILES_TO_DELETE
