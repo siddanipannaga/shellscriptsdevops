@@ -13,6 +13,6 @@ while IFS=":' read -r username passwd user_id group_id user_fullname home_dir sh
 do 
     echo "user name: $username"
     echo "user id: $user_id"
-    echo "user full name : $user_fullname"
+    echo " user full name : $user_fullname "
     
 done < $file
