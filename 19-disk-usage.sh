@@ -1,16 +1,15 @@
 #!/bin/bash
-DISK_USGAE=$(df -hT | grep -vE 'tmp|file')
+
+DISK_USAGE=$(df -hT | grep -vE 'tmp|File')
 DISK_THRESHOLD=1
-messgae=""
+message=""
 
-while IFS=read line
+while IFS= read line
 do
-    usage=$(echo $line | awk '{print $6F}' | cut -d % -f1 )
-
-
-if [ $usage -ge $DISK_THRESHOLD ]
+    usage=$(echo $line | awk '{print $6F}' | cut -d % -f1)
+    partition=$(echo $line | awk '{print $1F}')
+    if [ $usage -ge $DISK_THRESHOLD ]
     then
-        message="High Disk Usage on $partition: $usage <br>"
+        message+="High Disk Usage on $partition: $usage <br>"
     fi
-    
-done <<<$DISK_USAGE
+done <<< $DISK_USAGE
