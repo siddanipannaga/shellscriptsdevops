@@ -16,5 +16,3 @@ do
     echo "user full name : $user_fullname"
     
 done < $file
-
-
